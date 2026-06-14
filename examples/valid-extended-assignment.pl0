@@ -1,0 +1,9 @@
+const a = 10;
+var x;
+begin
+  x := 1;
+  x += a;
+  x -= 3;
+  x++;
+  x--;
+end.
