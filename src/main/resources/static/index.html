@@ -2,28 +2,69 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PL0 语言扩充课程设计</title>
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-    <h1>PL0 语言扩充课程设计</h1>
+<header class="app-header">
+    <div>
+        <h1>PL0 语言扩充课程设计</h1>
+        <p>词法分析、语法分析、语义分析与四元式生成</p>
+    </div>
+    <div class="team-card">
+        <strong>小组分工</strong>
+        <span>景懿琳：界面设计、测试</span>
+        <span>韩炼：语法分析、语义分析</span>
+        <span>梁佳豪：中间代码生成、词法分析</span>
+    </div>
+</header>
 
-    <section>
-        <h2>小组分工</h2>
-        <ul>
-            <li>景懿琳：界面设计、测试</li>
-            <li>韩炼：语法分析、语义分析</li>
-            <li>梁佳豪：中间代码生成、词法分析</li>
-        </ul>
+<main class="workspace">
+    <section class="editor-panel">
+        <div class="panel-title">
+            <h2>源程序</h2>
+            <button id="compileBtn" type="button">运行分析</button>
+        </div>
+        <textarea id="sourceInput" spellcheck="false">const a = 10;
+var x, i;
+begin
+  x := 1;
+  x += a;
+  x++;
+  for i := 1 to 3 do
+    x += i;
+end.</textarea>
     </section>
 
-    <section>
-        <h2>功能模块</h2>
-        <ul>
-            <li>词法分析：Token 序列</li>
-            <li>语法分析：语法树 / 分析过程</li>
-            <li>语义分析：符号表和错误检查</li>
-            <li>中间代码：四元式</li>
-        </ul>
+    <section class="result-grid">
+        <article class="result-panel">
+            <h2>Token 序列</h2>
+            <pre id="tokensOutput">等待运行...</pre>
+        </article>
+
+        <article class="result-panel">
+            <h2>AST 概要</h2>
+            <pre id="astOutput">等待运行...</pre>
+        </article>
+
+        <article class="result-panel">
+            <h2>符号表</h2>
+            <pre id="symbolsOutput">等待运行...</pre>
+        </article>
+
+        <article class="result-panel">
+            <h2>语义错误</h2>
+            <pre id="errorsOutput">等待运行...</pre>
+        </article>
+
+        <article class="result-panel wide">
+            <h2>四元式</h2>
+            <pre id="quadruplesOutput">等待运行...</pre>
+        </article>
     </section>
+</main>
+
+<script src="/app.js"></script>
 </body>
 </html>
